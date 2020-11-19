@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
 from PyQt5.QtGui import QPainter, QColor
 from random import randint as gen
 
+
 class Example(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -10,9 +11,11 @@ class Example(QMainWindow):
 
     def initUI(self):
         self.setGeometry(300, 300, 200, 200)
-        self.setWindowTitle('Рисование')
+        self.setWindowTitle('Program By Sila Ltd.')
         self.pushButton = QPushButton(self)
-        self.pushButton.move(self.wigth() // 2, self.height() // 2)
+        self.pushButton.move(45, 5)
+        self.pushButton.resize(100, 50)
+
         self.pushButton.clicked.connect(self.draw_bol)
         self.flag = False
         self.show()
@@ -31,7 +34,7 @@ class Example(QMainWindow):
     def drawFlag(self, qp):
         if self.flag:
             x, y, len_ = gen(0, self.width() - 1), gen(0, self.height() - 1), gen(0, self.width() // 2)
-            qp.setBrush(QColor(gen(0, 255), gen(0, 255), gen(0, 255)))
+            qp.setBrush(QColor(gen(255, 255), gen(255, 255), gen(0, 0)))
             qp.drawEllipse(x, y, len_, len_)
             self.flag = False
 
