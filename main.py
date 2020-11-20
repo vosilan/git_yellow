@@ -34,7 +34,7 @@ class Example(QMainWindow):
     def drawFlag(self, qp):
         if self.flag:
             x, y, len_ = gen(0, self.width() - 1), gen(0, self.height() - 1), gen(0, self.width() // 2)
-            qp.setBrush(QColor(gen(255, 255), gen(255, 255), gen(0, 0)))
+            qp.setBrush(QColor(gen(0, 255), gen(0, 255), gen(0, 255)))
             qp.drawEllipse(x, y, len_, len_)
             self.flag = False
 
